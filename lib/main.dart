@@ -70,11 +70,22 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      // 検索フィールドを追加
+      // 通知アイコンは不要
+      // タブを表示
+      // リストを表示（カードを表示（チップを表示））
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: const TextField(
+        cursorColor: Colors.black,
+        decoration: InputDecoration(
+            fillColor: Colors.white,
+            filled: true,
+            border: OutlineInputBorder()),
+      )
+          // title: Text(widget.title),
+          ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
