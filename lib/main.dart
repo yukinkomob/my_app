@@ -75,28 +75,48 @@ class _MyHomePageState extends State<MyHomePage> {
       // タブを表示
       // リストを表示（カードを表示（チップを表示））
       appBar: AppBar(
-          // Here we take the value from the MyHomePage object that was created by
-          // the App.build method, and use it to set our appbar title.
-          title: Column(
-        children: [
-          TextField(
-            cursorColor: Colors.black,
-            decoration: InputDecoration(
-              fillColor: Colors.white,
-              filled: true,
-              border: OutlineInputBorder(),
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Column(
+          children: [
+            TextField(
+              cursorColor: Colors.black,
+              decoration: InputDecoration(
+                fillColor: Colors.white,
+                filled: true,
+                border: OutlineInputBorder(),
+              ),
+            ),
+          ],
+        ),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(48.0),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                SizedBox(width: 8),
+                Chip(
+                  label: const Text('フォロー中'),
+                ),
+                SizedBox(width: 8),
+                Chip(
+                  label: const Text('フォローされた人'),
+                ),
+                SizedBox(width: 8),
+                Chip(
+                  label: const Text('マッチングした人'),
+                ),
+                SizedBox(width: 8),
+                Chip(
+                  label: const Text('未関係な人'),
+                ),
+                SizedBox(width: 8),
+              ],
             ),
           ),
-          Row(
-            children: [
-              Text("test"),
-              Text("test2"),
-              Text("test3"),
-              Text("test4"),
-            ],
-          )
-        ],
-      )),
+        ),
+      ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
